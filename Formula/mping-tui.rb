@@ -15,7 +15,7 @@ class MpingTui < Formula
   end
 
   def install
-    bin.install "mping-tui"
+    bin.install "mping"
   end
 
   test do
