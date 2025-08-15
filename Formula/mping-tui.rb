@@ -4,6 +4,7 @@ class MpingTui < Formula
   version "0.1.1"
   license "MIT"
 
+  # --- macOS: ARM (Apple Silicon) & Intel ---
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/teddyfluffkins/mping-tui/releases/download/v0.1.1/mping_0.1.1_darwin_arm64.tar.gz"
@@ -11,6 +12,16 @@ class MpingTui < Formula
     else
       url "https://github.com/teddyfluffkins/mping-tui/releases/download/v0.1.1/mping_0.1.1_darwin_amd64.tar.gz"
       sha256 "166cfc13aaea7163fe8a40bf48e228092cb2b1a5e26e528f9aebdc6965ea5c26"
+    end
+  end
+  # --- Linux: ARM64 & AMD64 ---
+  on_linux do
+    if Hardware::CPU.arm?
+      url "https://github.com/teddyfluffkins/mping-tui/releases/download/v0.1.1/mping_0.1.1_linux_arm64.tar.gz"
+      sha256 "2c99626d22657ee87b9a3e2c305e190ec7394002ab6dd5d39cca7d840313afdf"
+    else
+      url "https://github.com/teddyfluffkins/mping-tui/releases/download/v0.1.1/mping_0.1.1_linux_amd64.tar.gz"
+      sha256 "348e2a20385358813c8eaa9cea27375d88d7e8280d8117c8eb244e4723528e99"
     end
   end
 
